@@ -1,0 +1,45 @@
+﻿
+@{
+    var imprimantesDisponible = IUT_TPNote_2025.Services.PrintJobManager.GetNombreImprimantesDisponibles();
+    var tacheEnAttente = IUT_TPNote_2025.Services.PrintJobManager.GetNombreTachesEnAttente();
+    var tacheEnCours = IUT_TPNote_2025.Services.PrintJobManager.GetNombreTachesEnCours();
+    var tacheTerminee = IUT_TPNote_2025.Services.PrintJobManager.GetNombreTachesTerminees();
+
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Imprimantes disponibles
+            </th>
+            <th>
+                Impression en attente
+            </th>
+            <th>
+                Impression en cours
+            </th>
+            <th>
+                Tâches terminées
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @imprimantesDisponible
+            </td>
+            <td>
+                @tacheEnAttente
+            </td>
+            <td>
+                @tacheEnCours
+            </td>
+            <td>
+                @tacheTerminee
+            </td>
+        </tr>
+    </tbody>
+</table>

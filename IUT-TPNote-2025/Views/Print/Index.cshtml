@@ -1,0 +1,20 @@
+﻿@model IEnumerable<IUT_TPNote_2025.Models.Impression>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    <div id="liste-impression">
+        @Html.Partial("_ListeImpressionPartial", Model)
+    </div>
+</p>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    setInterval(function () {
+        $("#liste-impression").load('@Url.Action("GetListeImpression", "Print")');
+    }, 5000); // toutes les 5 secondes
+</script>
